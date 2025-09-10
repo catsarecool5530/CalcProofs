@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+
+% Basic packages for LaTeX
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% Page formatting
+\usepackage[margin=1in]{geometry}
+\usepackage{parskip}
+
+% Additional useful packages
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{hyperref}
+
+% Theorem environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{note}[theorem]{Note}
+
+% Custom commands for calculus
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\dd}[1]{\frac{d}{d#1}}
+\newcommand{\ddd}[2]{\frac{d#1}{d#2}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+
+\title{Calculus Proofs}
+\author{Nathan Yan}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Sample Proof}
+
+This document demonstrates the basic LaTeX setup for writing calculus proofs.
+
+\begin{theorem}[Derivative of a Constant]
+If $c$ is a constant, then $\dd{x}c = 0$.
+\end{theorem}
+
+\begin{proof}
+By the definition of derivative:
+\begin{align}
+\dd{x}c &= \lim_{h \to 0} \frac{c - c}{h} \\
+&= \lim_{h \to 0} \frac{0}{h} \\
+&= \lim_{h \to 0} 0 \\
+&= 0
+\end{align}
+\end{proof}
+
+\begin{example}
+Consider the function $f(x) = 5$. Then $f'(x) = 0$ for all $x \in \R$.
+\end{example}
+
+\section{Additional Proofs}
+
+% Add your calculus proofs here
+% Use the theorem environments defined above
+
+\end{document}

@@ -1,0 +1,41 @@
+% Example of how to add a new proof to main.tex
+% Copy and paste this template into the "Additional Proofs" section
+
+\section{Power Rule}
+
+\begin{theorem}[Power Rule for Derivatives]
+For any real number $n$ and $x > 0$, if $f(x) = x^n$, then $f'(x) = nx^{n-1}$.
+\end{theorem}
+
+\begin{proof}
+We use the definition of derivative:
+\begin{align}
+f'(x) &= \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} \\
+&= \lim_{h \to 0} \frac{(x+h)^n - x^n}{h}
+\end{align}
+
+Using the binomial theorem, $(x+h)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} h^k$.
+
+Therefore:
+\begin{align}
+(x+h)^n - x^n &= \sum_{k=1}^{n} \binom{n}{k} x^{n-k} h^k \\
+&= \binom{n}{1} x^{n-1} h + \binom{n}{2} x^{n-2} h^2 + \cdots + h^n \\
+&= nx^{n-1}h + \frac{n(n-1)}{2}x^{n-2}h^2 + \cdots + h^n \\
+&= h\left(nx^{n-1} + \frac{n(n-1)}{2}x^{n-2}h + \cdots + h^{n-1}\right)
+\end{align}
+
+Thus:
+\begin{align}
+f'(x) &= \lim_{h \to 0} \frac{h\left(nx^{n-1} + \frac{n(n-1)}{2}x^{n-2}h + \cdots + h^{n-1}\right)}{h} \\
+&= \lim_{h \to 0} \left(nx^{n-1} + \frac{n(n-1)}{2}x^{n-2}h + \cdots + h^{n-1}\right) \\
+&= nx^{n-1}
+\end{align}
+\end{proof}
+
+\begin{example}
+For $f(x) = x^3$, we have $f'(x) = 3x^2$.
+\end{example}
+
+\begin{remark}
+This proof assumes $n$ is a positive integer. The result extends to all real numbers using more advanced techniques.
+\end{remark}
