@@ -1,0 +1,46 @@
+\clearpage
+\section{Limits}
+
+Limit proofs hinge on the following definition of a limit:
+
+\[\lim_{x \to a} f(a) = L \iff \forall \varepsilon > 0, \]
+\[\exists\ \delta\ s.t.\ 0 < |x - a| < \delta \implies |f(x) - L| < \varepsilon\]
+
+
+\subsection{Addition Rule}
+
+Statement:
+
+given that 
+\[\lim_{x \to a} f(x) = L, \lim_{x \to a} f(x) = M\], show that
+\[\lim_{x \to a} f(x) + g(x) = L + M\]
+
+\begin{proof}
+Consider some $\varepsilon > 0$, then by the definition of the limit there exists $\delta_1$ and $\delta_2$ such that:
+
+\[0 < |x - a| < \delta_1 \implies |f(x) - L| < \frac{\varepsilon}{2}\]
+
+\[0 < |x - a| < \delta_2 \implies |g(x) - M| < \frac{\varepsilon}{2}\]
+
+Then let $\delta = \text{min}(\delta_1, \delta_2)$, and we need
+\[|f(x) + g(x) - (L + M)| < \varepsilon\]
+
+We have:
+
+\[0 < |x - a| < \delta\]
+which implies
+\[|f(x) - L| < \frac{\varepsilon}{2}\]
+and
+\[|g(x) - M| < \frac{\varepsilon}{2}\]
+
+By the triangle inequality, 
+\[|a + b| \leq |a| + |b|\]
+so
+\[|f(x) + g(x) - (L + M)| < |f(x) - L| + |g(x) - L| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon\]
+so
+\[|f(x) + g(x) - (L + M)| < \varepsilon\]
+and so limits follow the addition rule.
+\qed
+\end{proof}
+
+Do note that I \emph{did} need to consult the textbook for the triangle inequality stuff, but the rest was fine.
