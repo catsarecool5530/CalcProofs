@@ -63,3 +63,32 @@ prove that
 A function, $f(x)$, is continuous if \[\lim_{x \to a} f(x) = f(a)\]
 
 From this, let us prove that all polynomials of the form $x^n$ for $n \in \mathbb{N}$ are continuous. 
+
+
+\subsection{Rational Powers}
+
+Now, since a certain someone asked for it, I'll do \emph{one} more epsilon delta proof.
+
+Prove that 
+\[f(x) = \sqrt[n]{x}\] 
+
+is continuous for all $x > 0$
+
+Consider some $\varepsilon > 0$, we have to find some $\delta$ such that:
+
+\[0 < |x - a| < \delta \implies |\sqrt[n]{x} - \sqrt[n]{a}| < \varepsilon\]
+
+for all $a > 0$.
+
+Which is equivalent to 
+
+\[-\delta < x - a < \delta \implies -\varepsilon < \sqrt[n]{x} - \sqrt[n]{a} < \varepsilon\]
+
+Technically $x \neq a$, but we don't need this condition.
+
+Presume $\varepsilon < \sqrt[n]{a}$. This can always be satisfied because $a > 0 \implies \sqrt[n]{a} > 0$.
+
+This implies $0 < \sqrt[n]{a} - \varepsilon < \sqrt[n]{a}$, and we can set $\delta = \text{min}(a - (\sqrt[n]{a} - \varepsilon)^n, (\sqrt[n]{a} + \varepsilon)^n - a)$
+
+
+
