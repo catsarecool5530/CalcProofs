@@ -1,0 +1,23 @@
+\clearpage
+\section{Basic Derivatives}
+
+I hate epsilon delta proofs, no more! Derivative proofs are so much more intuitive, its great...
+
+\subsection{Power Rule for $n \in \mathbb{N}$}
+Easy proof with binomial theorem.
+\begin{proof}
+consider $f(x) = x^n$, $n \in \mathbb{N}$.
+
+\begin{align}
+\frac{d}{dx} x^n &= \lim_{h \to 0} \frac{(x + h)^n - x^n}{h} \\
+&= \lim_{h \to 0} \frac{-x^n + \binom{0}{n}x^n + \binom{1}{n}hx^{n-1} + \binom{2}{n}h^2n^{n-2} + \ldots + \binom{n-2}h^{n-2}n^2 + \binom{n-1}{n}h^{n-1}n + \binom{n}{n} h^n}{h} \\
+&= \lim_{h \to 0} \frac{-x^n + x^n + nhx^{n-1} + \frac{n(n-1)}{2}h^2n^{n-2} + \ldots + \frac{n(n-1)}{2}h^{n-2}n^2 + nh^{n-1}n + h^n}{h} \\
+&= \lim_{h \to 0} \frac{nhx^{n-1} + \frac{n(n-1)}{2}h^2n^{n-2} + \ldots + \frac{n(n-1)}{2}h^{n-2}n^2 + nh^{n-1}n + h^n}{h} \\ 
+&= \lim_{h \to 0} \frac{h(nx^{n-1} + \frac{n(n-1)}{2}hn^{n-2} + \ldots + \frac{n(n-1)}{2}h^{n-3}n^2 + nh^{n-2}n + h^{n-1}}{h} \\ 
+&= \lim_{h \to 0} nx^{n-1} + \frac{n(n-1)}{2}hn^{n-2} + \ldots + \frac{n(n-1)}{2}h^{n-3}n^2 + nh^{n-2}n + h^{n-1} \\
+&= nx^{n-1}
+\end{align}
+\end{proof}
+
+
+Light work, no help needed.
