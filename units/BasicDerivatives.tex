@@ -1,8 +1,22 @@
 \clearpage
 \section{Basic Derivatives}
 
+
+
 I hate epsilon delta proofs, no more! Derivative proofs are so much more intuitive, its great...
 
+\subsection{Addition Rule}
+
+Should be trivial, is trivial, most people don't even think this needs a proof....
+
+\begin{proof}
+\begin{align}
+\frac{d}{dx} f(x) + g(x) 
+&= \lim_{h \to 0} \frac{f(x + h) + g(x + h) - f(x) - g(x)}{h}
+&= \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} + \lim_{h \to 0} \frac{g(x + h) - g(x)}{h}
+&= f'(x) + g'(x)
+\end{align}
+\end{proof}
 \subsection{Power Rule for $n \in \mathbb{N}$}
 Easy proof with binomial theorem.
 \begin{proof}
