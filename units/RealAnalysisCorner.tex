@@ -1,0 +1,57 @@
+\clearpage
+\section{Real analysis corner}
+
+So apparently I'm good for real analysis because I keep doing these proofs and they are always so easy.
+
+\subsection{}
+
+Suppose that $(p_n)$ and $(q_n)$ are sequences in a metric space $(X, d)$ with the property that $\lim _{n \to \infty} d(p_n, q_n) = 0$. 
+
+(i) Prove that if ${p_n}$ is Cauchy then ${q_n}$ is Cauchy.
+
+
+Consider some $\varepsilon > 0$. We will now prove there exists some $N$ such that for all $n, m > N$, $d(q_n, q_m) < \varepsilon$. 
+
+Because $p_n$ is Cauchy, there exists some $N_1$ such that for all $n, m > N_1$, $d(p_n, p_m) < \frac{\varepsilon}{4}$. 
+
+Because $\lim _{n \to \infty} d(p_n, q_n) = 0$, there exists some $N_2$ such that for all $n, m > N_2$, $d(p_n, q_n) < \frac{\varepsilon}{4}$ and $d(p_m, q_m) < \frac{\varepsilon}{4}$
+
+Then by triangle inequality,
+
+\[d(p_m, q_n) < d(p_n, p_m) + d(p_n, q_n) < \frac{\varepsilon}{2}\]
+and
+\[d(p_m, q_m) < d(p_n, p_m) + d(p_m, q_m) < \frac{\varepsilon}{2}\]
+
+And then we can combine it to get
+
+\[d(q_n, q_m) < d(p_m, q_n) + d(p_m, q_m) < \varepsilon\]
+And we are done!
+
+\subsection{}
+\newcommand{\expSum}[1]{\sum_{k = 0}^{#1} 2^ka_{2^k}}
+
+
+Prove that for an decreasing sequence $a_n$ the infinite sum of $a_n$ converges $\iff$ $\expSum{\infty}$ converges.
+
+Firstly, $a_n$ must be non negative. Suppose that some $a_N$ is negative. Then, for all $n > N$, $a_n$ is negative. This sum clearly diverges to $-\infty$. 
+
+Then, the sum of the sequence must converge to a nonnegative number. 
+
+Let us consider 
+\[\frac{\expSum{\infty}}{2} = \sum_{k = 0}^{\infty} 2^{k-1}a_{2^k}\]
+
+If $\sum_{k = 0}^{\infty} 2^{k-1}a_{2^k}$ converges, then $\sum_{k = 1}^{\infty} 2^{k-1}a_{2^k}$
+converges because it is off by a constant.
+
+Let's expand this expression and break up all the $2^k$ terms, to get
+
+\[a_2, a_4, a_4, a_8, a_8, a_8, a_8, \ldots a_{2^{\lceil \log_2(i + 1) \rceil}} \ldots\]
+\[a_1, a_2, a_3, a_4, a_5, a_6, a_7, \ldots a_i \ldots\]
+
+It is clear that the $i \leq 2^{\lceil \log_2(i + 1) \rceil}$, and since this is a decreasing sequence it implies that 
+
+\[0 < \sum_{k = 1}^{\infty} 2^{k-1}a_{2^k} < \sum_{i = 1}^\infty a_i\]
+
+Yay it converges! Which, of course also implies that $\expSum{\infty}$ converges.
+
+You can use the same process to prove the other side of the biconditional by proving that \[0 < \sum_{i = 1}^\infty a_i < \expSum{\infty}\]

@@ -22,6 +22,33 @@ consider $f(x) = x^n$, $n \in \mathbb{N}$.
 
 Light work, no help needed.
 
+\subsection{Basic Trig}
+
+Here is $\cos x$:
+\begin{proof}
+Remember that:
+
+\[\cos(\alpha + \beta) = \cos\alpha\cos\beta - \sin\alpha\sin\beta\]
+
+Now consider our def of limit:
+
+\begin{align}
+&\lim_{h \to 0} \frac{\cos(x + h) - \cos(x)}{h} \\
+&= \lim_{h \to 0} \frac{\cos x \cos h - \sin x \sin h - \cos x}{h} \\
+&= \lim_{h \to 0} \frac{\cos x(\cos h - 1) - \sin x \sin h}{h} \\ 
+&= \lim_{h \to 0} \frac{\cos x(\cos h - 1)}{h} - \lim_{h \to 0} \frac{\sin x \sin h}{h}
+\end{align}
+
+Now, 
+\[\lim_{h \to 0} \frac{\cos h - 1}{h} = 0\]
+and
+\[\lim_{h \to 0} \frac{\sin h}{h} = 1\]
+
+so it simplifies down to
+
+$\cos x \cdot 0 - \sin x \cdot 1 =$ \fbox{-sin x}
+\end{proof}
+
 \subsection{Quotient Rule}
 
 
@@ -38,3 +65,71 @@ Quotient rule is pretty easy too. No help needed.
 &= \frac{g(x) f'(x) - f(x) g'(x)}{g(x)^2}
 \end{align}
 \end{proof}
+
+
+\subsection{Power Rule for $n \in \mathbb{Q}$}
+
+This one is solved in the textbook with implicit differentiation, but I provide my own proof here.
+
+\begin{proof}
+Recall that 
+\[a^n - b^n = (a - b)(a^{n-1} + ba^{n-2} + b^2a^{n-3} + \ldots +  b^{n-2}a + b^{n-1})\]
+The proof is trivial by "just distribute it"
+
+Consider 
+\[x^{\frac{1}{n}}, n \in \mathbb{N}\]
+
+\begin{align}
+\frac{d}{dx} x ^{\frac{1}{n}} &= \lim_{h \to 0} \frac{(x + h)^{\frac{1}{n}} - x^{\frac{1}{n}}}{h} \\
+&= \lim_{h \to 0} \frac{(x + h)^{\frac{1}{n}} - x^{\frac{1}{n}}}{h} \cdot \frac{(x+h)^{\frac{n-1}{n}} + (x+h)^{\frac{n-2}{n}} x^{\frac{1}{n}} + \ldots + (x+h)^{\frac{1}{n}} x ^ {\frac{n - 2}{n}} + x^{\frac{n-1}{n}}}{(x+h)^{\frac{n-1}{n}} + (x+h)^{\frac{n-2}{n}} x^{\frac{1}{n}}  + \ldots + (x+h)^{\frac{1}{n}} x ^ {\frac{n - 2}{n}} + x^{\frac{n-1}{n}}} \\
+&=\lim_{h \to 0} \frac{x + h - x}{h((x+h)^{\frac{n-1}{n}} + (x+h)^{\frac{n-2}{n}} x^{\frac{1}{n}}  + \ldots + (x+h)^{\frac{1}{n}} x ^ {\frac{n - 2}{n}} + x^{\frac{n-1}{n}})}\\
+&= \lim_{h \to 0}\frac{h}{h((x+h)^{\frac{n-1}{n}} + (x+h)^{\frac{n-2}{n}} x^{\frac{1}{n}}  + \ldots + (x+h)^{\frac{1}{n}} x ^ {\frac{n - 2}{n}} + x^{\frac{n-1}{n}})}\\
+&= \lim_{h \to 0}\frac{1}{((x+h)^{\frac{n-1}{n}} + (x+h)^{\frac{n-2}{n}} x^{\frac{1}{n}}  + \ldots + (x+h)^{\frac{1}{n}} x ^ {\frac{n - 2}{n}} + x^{\frac{n-1}{n}})}
+\end{align}
+
+Now we can plug in 0 to get 
+\begin{align}
+&\frac{1}{nx^{\frac{n-1}{n}}}\\
+&= \frac{1}{n} x^{\frac{1}{n} - 1}
+\end{align}
+
+Thus, the power rule holds for all nth roots.
+
+Next, consider a function of the form 
+\[x^{\frac{a}{b}} (a, b \in \mathbb{N})\]
+
+\begin{align}
+x^{\frac{a}{b}} \\ 
+&= (x^a)^{\frac{1}{b}}
+\end{align}
+Applying chain rule
+\begin{align}
+\frac{d}{dx}((x^a)^{\frac{1}{b}}) &= \frac{1}{b}(x^a)^{\frac{1}{b} - 1} a x^{a-1} \\
+&= \frac{a}{b} x^{\frac{a}{b} - a} x^{a - 1} \\
+&= \frac{a}{b} x^{\frac{a}{b} -a  + a - 1}\\
+\frac{d}{dx} x^{\frac{a}{b}}&= \frac{a}{b} x^{\frac{a}{b} - 1}
+\end{align}
+
+Thus, the power rule holds for all rational powers.
+\end{proof}
+
+Obviously, if I didn't use the textbook proof, I didn't need any help from it.
+
+Regardless, I am going to provide the implicit differentiation proof here for reference (didnt need help from it though):
+
+\begin{proof}
+Consider $y = x^{\frac{a}{b}}$, where $a, b \in \mathbb{N}$
+\begin{align}
+y^b &= (x^{\frac{a}{b}})^b \\
+y^b &= x^a \\
+b y^{b-1} \frac{dy}{dx} &= a x^{a-1} \\
+\frac{dy}{dx} &= \frac{a x^{a-1}}{b y^{b-1}} \\
+&= \frac{a x^{a-1}}{b (x^{\frac{a}{b}})^{b-1}} \\
+&= \frac{a x^{a-1}}{b x^{a - \frac{a}{b}}} \\
+&= \frac{a}{b} x^{a - 1 - a + \frac{a}{b}} \\
+&= \frac{a}{b} x^{\frac{a}{b} - 1}
+\end{align}
+\end{proof}
+
+Pretty simple, which is why the textbook used it.
+

@@ -1,0 +1,114 @@
+\clearpage
+\section{Transcendentals}
+
+Chapter 3 was all applications, and chapter 4 was integrals and the proofs for FTC and whatnot all suck balls and require a lot of impossible yap, so we at chapter 5 now. 
+
+
+\subsection{The Natural Log}
+
+The textbook first defines the natural log as is a function such that 
+\[\int _1 ^x \frac{1}{x} = \ln(x)\]
+
+So we'll roll with this one. First, 
+\[\ln(1) = 0\]
+
+Obviously.
+
+Antiderivatives differ by at most a constant. Consider
+
+\[\frac{d}{dx}(\ln(ax)) = \frac{a}{ax} = \frac{1}{x}\]
+
+and
+
+\[\frac{d}{dx}(\ln(x) + \ln(a)) = \frac{1}{x}\]
+
+Therefore, these 2 expressions must differ by at most a constant. When $x=1$, these functions both equal $\ln(a)$, so therefore they are equivalent and $\boxed{\ln(ab) = \ln(a) + \ln(b)}$
+
+\[\ln(x^n) = \ln(\underbrace{x \cdot x \cdot x \cdot \ldots \cdot x}_n) = \boxed{n \ln x}\]
+
+\[\ln(\frac{a}{b}) = \ln(ab^{-1}) =\boxed{\ln(a) - \ln(b)}\]
+
+Now, it is time to combine this definition with the one learned in an algebra class, that is, $\ln x = \log_e(x)$. The proofs of logarithmic properties given a definition as the inverse of an exponential are trivial and will not be proven.
+
+We need to show that there is some base, $b$, such that 
+
+\[\lim_{h \to 0} \frac{\log_b(x + h) - \log_b(x)}{h} = \frac{1}{x}\]
+
+For all $x > 0$.
+
+\begin{align}
+    \lim_{h \to 0} \frac{\log_b(x + h) - \log_b(x)}{h} &= \frac{1}{x} \\
+    \lim_{h \to 0} \frac{\log_b(\frac{x + h}{x})}{h} &= \frac{1}{x} \\
+    \lim_{h \to 0} \frac{x}{h} \log_b(1 + \frac{h}{x}) &= 1 \\
+    \lim_{h \to 0} \log_b({(1 + \frac{h}{x})^{\frac{x}{h}}}) &= 1 \\
+\end{align}
+
+Now we put the limit inside the log. This might seem objectionable, but log is continuous so its fine.
+
+\begin{align}
+\log_b({\lim_{h \to 0} (1 + \frac{h}{x})^{\frac{x}{h}}}) &= 1 \\
+\end{align}
+
+Let $u = \frac{x}{h}$. As $h \to 0^+$, $u \to \infty$, and when $h \to 0^-$, $u \to -\infty$, so we need to handle these separately and show that they converge to the same value.
+
+\begin{align}
+\log_b({\lim_{u \to \infty} (1 + \frac{1}{u})^{u}}) &= 1 \\
+\end{align}
+
+Recall the compound interest definition of $e$:
+
+\[\lim_{t \to \infty} (1 + \frac{1}{t})^t\]
+
+and we can apply it here.
+
+\begin{align}
+\log_b({e}) &= 1 \\
+e &= b^1 \\
+b &= e
+\end{align}
+
+And so we are done with the positive case.
+
+\begin{align}
+\log_b({\lim_{u \to -\infty} (1 + \frac{1}{u})^{u}}) &= 1 \\
+\end{align}
+
+Let $t = -u$. $t$ approaches infinity now.
+
+\begin{align}
+\log_b({\lim_{t \to \infty} (1 + \frac{1}{-t})^{-t}}) &= 1 \\
+\log_b(\lim_{t \to \infty} (\frac{t-1}{t})^{-t}) &= 1\\
+\log_b(\lim_{t \to \infty} (\frac{t}{t-1})^{t}) &= 1 \\
+\log_b(\lim_{t \to \infty} (\frac{t - 1 + 1}{t-1})^{t}) &= 1 \\
+\log_b(\lim_{t \to \infty} (1 + \frac{1}{t-1})^{t}) &= 1 \\
+\log_b(\lim_{t \to \infty} (1 + \frac{1}{t-1})^{t - 1 + 1}) &= 1 \\
+\log_b(\lim_{t \to \infty} (1 + \frac{1}{t-1})^{t - 1} \cdot (1 + \frac{1}{t-1})) &= 1 \\
+\log_b(\lim_{t \to \infty} (1 + \frac{1}{t-1})^{t - 1} \cdot \lim_{t \to \infty} (1 + \frac{1}{t-1})) &= 1 \\
+\log_b(e \cdot 1) &= 1 \\
+\log_b(e) &= 1 \\
+b &= e
+\end{align}
+
+Hooray! It works both ways, so we have successfully proven that $\boxed{\ln x = \log_e(x)}$
+
+\subsection{Exponentials}
+
+The book defines $e^x$ as the inverse function of $\ln x$, so lets prove the derivative from that:
+
+\begin{align}
+\ln y &= x \\ 
+\frac{1}{y} \cdot \frac{dy}{dx} &= 1 \\
+\frac{dy}{dx} &= y \\
+\frac{dy}{dx} &= e^x 
+\end{align}
+
+Nice. From here, we can prove the general exponential:
+
+\begin{align}
+y &= a^x \\
+\ln y &= x \ln a \\
+\frac{1}{y} \cdot \frac{dy}{dx} &= \ln a \\
+\frac{dy}{dx} &= \ln a \cdot a^x 
+\end{align}
+
+In fact, this proof is so easy that is one of the few that we did in class.
