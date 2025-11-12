@@ -5,10 +5,11 @@
 \contentsline {subsection}{\numberline {1.3}Polynomials are continuous}{5}{subsection.1.3}%
 \contentsline {subsection}{\numberline {1.4}Rational Powers}{5}{subsection.1.4}%
 \contentsline {section}{\numberline {2}Basic Derivatives}{6}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Power Rule for $n \in \mathbb {N}$}{6}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Basic Trig}{6}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Quotient Rule}{7}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Power Rule for $n \in \mathbb {Q}$}{7}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.1}Addition Rule}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Power Rule for $n \in \mathbb {N}$}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Basic Trig}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Quotient Rule}{7}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Power Rule for $n \in \mathbb {Q}$}{7}{subsection.2.5}%
 \contentsline {section}{\numberline {3}Transcendentals}{9}{section.3}%
 \contentsline {subsection}{\numberline {3.1}The Natural Log}{9}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Exponentials}{10}{subsection.3.2}%
